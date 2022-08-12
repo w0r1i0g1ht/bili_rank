@@ -11,7 +11,7 @@ def main():
               "Connection": "keep - alive"
               }
     page = requests.get(url=url, headers=header)
-    page.encoding="utf-8"
+    page.encoding = "utf-8"
     page = BeautifulSoup(page.text,"html.parser")
     lis = page.find_all("li",attrs={"class":"rank-item"})
     for li in lis:
