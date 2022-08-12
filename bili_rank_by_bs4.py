@@ -27,7 +27,6 @@ def main():
         print("播放量",play.strip())
         print("弹幕",like.strip())
         print("")
-    # print(lis)
     pass
 
 
