@@ -11,6 +11,7 @@ def main():
               "Connection": "keep - alive"
     }
     page = requests.get(url=url,headers=header)
+    page.encoding = "utf-8"
     page = page.text
     tree = etree.HTML(page)
     divs = tree.xpath("/html/body/div[3]/div/div[2]/div[2]/ul/li")
