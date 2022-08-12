@@ -11,6 +11,7 @@ def main():
               "Connection": "keep - alive"
               }
     page = requests.get(url=url,headers=header)
+    page.encoding = "utf-8"
     page = page.text
     obj = re.compile(r'<li data-id=.*?data-rank="(?P<rank>.*?)".*?<a href="(?P<url>.*?)".*?class="title">(?P<title>.*?)</a>'
                      r'.*?alt="up">(?P<up>.*?)</span>.*?alt="play">(?P<play>.*?)</span>.*?alt="like">(?P<like>.*?)</span>',re.S)
