@@ -5,7 +5,11 @@ import re
 
 def main():
     url = 'https://www.bilibili.com/v/popular/rank/all'
-    header = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:103.0) Gecko/20100101 Firefox/103.0"}
+    header = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:103.0) Gecko/20100101 Firefox/103.0",
+              "Accept": "application / json, text / plain, * / *",
+              "Accept - Encoding": "gzip, deflate, br",
+              "Connection": "keep - alive"
+              }
     page = requests.get(url=url,headers=header)
     page = page.text
     obj = re.compile(r'<li data-id=.*?data-rank="(?P<rank>.*?)".*?<a href="(?P<url>.*?)".*?class="title">(?P<title>.*?)</a>'
@@ -18,7 +22,7 @@ def main():
         print("up主",it.group("up").strip())
         print("播放量",it.group("play").strip())
         print("弹幕",it.group("like").strip())
-        print("\n")
+        print("")
     pass
 
 
