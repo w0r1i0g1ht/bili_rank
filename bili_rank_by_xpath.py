@@ -27,7 +27,7 @@ def main():
         print("up主",up[0].strip())
         print("播放量",play[0].strip())
         print("弹幕",like[0].strip())
-        print("\n")
+        print("")
     pass
 
 
